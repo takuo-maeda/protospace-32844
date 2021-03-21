@@ -9,9 +9,9 @@
 | email       | string       | null: false  |
 | password    | string       | null: false  |
 | name        | string       | null: false  |
-| profile     | text         | null: false  |
-| occupation  | text         | null: false  |
-| posion      | text         | null: false  |
+| profile     | text         | nil: false   |
+| occupation  | text         | nil: false   |
+| position    | text         | nil: false   |
 
 #Association
 
