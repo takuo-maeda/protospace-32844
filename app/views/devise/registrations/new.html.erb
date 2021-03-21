@@ -11,6 +11,7 @@
           <%= f.label :email, "メールアドレス" %><br />
           <%= f.email_field :email, id:"user_email", autofocus: true, autocomplete: "email" %>
         </div>
+        <%# autofocus: true, 新規立ち上げの際、カーソルが常にこの空欄にある設定%>
 
         <div class="field">
           <%= f.label :password, "パスワード（6文字以上）" %><br />
