@@ -1,7 +1,8 @@
 <div class="card">
   <%= link_to image_tag(prototype.image, class: :card__img ), prototype_path(prototype.id) %>
-  <%# <%= image_tag prototype.image, class: 'card__img'%> <%#これではリンクしな#%>
+  <%# <%= image_tag prototype.image, class: 'card__img'%> <%#これではリンクしない#%>
   <%# <%= link_to image_tag("プロトタイプの画像", class: :card__img ), root_path%>
+  <%# #決論  基本的にはimage_tag("#{  }")では読み込めないことがわかった 3/24%>
 
 
   <div class="card__body">
