@@ -26,6 +26,14 @@ class PrototypesController < ApplicationController
         # エラーは表示されない
        end
   end
+  
+  def edit
+  end
+
+  def update
+  end
+
+
   def show
     @prototype = Prototype.find(params[:id])
   end
