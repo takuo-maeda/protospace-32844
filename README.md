@@ -22,13 +22,13 @@
 
 
 ##prototypesテーブル
-| colomn      | Type         | Options              |
-| ----------- | ------------ | -------------------- |
-| title       | string       | null: false          |
-| catch_copy  | text         | null: false          |
-| concept     | text         | null: false          |
-| image       |              | ActiveStorageで実装  |
-| user        | references   | null: false          |
+| colomn      | Type         | Options                  |
+| ----------- | ------------ | ------------------------ |
+| title       | string       | null: false              |
+| catch_copy  | text         | null: false              |
+| concept     | text         | null: false              |
+| image       |              | ActiveStorageで実装      |
+| user        | references   | null: false  foreign_key |
 
 #Association
 - belongs_to :user
