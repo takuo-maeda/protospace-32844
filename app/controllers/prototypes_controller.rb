@@ -16,8 +16,9 @@ class PrototypesController < ApplicationController
        if @prototype.save
           redirect_to root_path, notice: "作成しました"
        else
-        # @prototype = Prototype.new(prototype_params)
-        render  'new'# オブジェクトB
+        @prototype = Prototype.new(prototype_params)
+        render 'new'
+        # オブジェクトB
       
         # オブジェクトC
         # .newにより新規に作られたオブジェクトが@prototypeに設定される
@@ -26,13 +27,42 @@ class PrototypesController < ApplicationController
         # エラーは表示されない
        end
   end
+
+  def destroy
+    @prototype = Prototype.find(params[:id])
+    if @prototype.destroy
+      redirect_to root_path
+    end
+  end
   
   def edit
+    @prototype = Prototype.find(params[:id])
   end
 
   def update
+    @prototype = Prototype.find(params[:id])
+    if @prototype.update(prototype_params)
+      redirect_to prototype_path(@prototype.id)
+    else
+      # @prototype = prototype.update(prototype_params)
+      render :edit
+    end
   end
-
+#---------------------------------------
+  # if @item.update(item_params)
+  #   redirect_to @item
+  # else
+  #   render :edit
+  # end
+#---------------------------------------
+#テキスト ChatAppUser管理機能問８
+# def update
+#   if current_user.update(user_params)
+#     redirect_to root_path
+#   else
+#     render :edit
+#   end
+# end
 
   def show
     @prototype = Prototype.find(params[:id])
