@@ -30,4 +30,5 @@ class User < ApplicationRecord
 # [途中導入の注意点]※おまけ的な
   validates :name, presence: true
   has_many  :prototypes
+  has_many  :comments
 end
