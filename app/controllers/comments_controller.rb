@@ -1,19 +1,21 @@
 class CommentsController < ApplicationController
   def create
-    if @comment = Comment.new(comment_params)
+    @prototype = Prototype.find(params[:prototype_id])
+    @comment = @prototype.comments.create(comment_params)
       if @comment.save
-        redirect_tp prototype_path(prototype.id) 
+        # redirect_to "/prototypes/#{comment.prototype.id}" 
+         redirect_to prototype_path(params[:prototype_id])
       else
-        @prototype = @comment.text
-        @comments = @prptotype.comments
-        render "tweets/show" # views/tweets/show.html.erbのファイルを参照しています。
+         @prototype = @comment.prototype
+         @comments = @prptotype.comments
+        render "prototypes/show" # views/tweets/show.html.erbのファイルを参照しています。
       end
-    end             
-  end
-
+  end             
+  # createメソッドは引数にキーとバリューのセットの情報を渡します。
 
 private
 
-def comment_params
-  params.require(:comment).permit(:text ).merge(user_id: prototype_id:)
+    def comment_params
+      params.require(:comment).permit(:text).merge(user_id: current_user.id, prototype_id:  params[:prototype_id])
+    end
 end
