@@ -67,7 +67,7 @@ class PrototypesController < ApplicationController
   def show
     @prototype = Prototype.find(params[:id])
     @comment = Comment.new #from withを使用してコメントをクリエイト「comments#create」を実行したい
-    @coments = @prototype.comments.includes(:user)
+    @comments = @prototype.comments.includes(:user)
   end
 
   private
