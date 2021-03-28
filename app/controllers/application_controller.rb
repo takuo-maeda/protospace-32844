@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
   # :sign_in	ログイン(サインイン)の処理を行うとき
   # :sign_up	新規登録(サインアップ)の処理を行うとき
   # :account_update	アカウント情報更新の処理を行うときき
+  
 
   private
   def configure_permitted_parameters
